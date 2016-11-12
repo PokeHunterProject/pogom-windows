@@ -44,7 +44,7 @@ log = logging.getLogger(__name__)
 HASH_SEED = 0x46E945F8  # static hash seed from app
 EARTH_RADIUS = 6371000  # radius of Earth in meters
 
-_nhash = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(os.path.realpath(__file__)), "lib/libniantichash-linux-x86-64.so"))
+_nhash = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(os.path.realpath(__file__)), "lib/libniantichash-windows-x86-64.dll"))
 _nhash.compute_hash.argtypes = (ctypes.POINTER(ctypes.c_ubyte), ctypes.c_uint32)
 _nhash.compute_hash.restype = ctypes.c_uint64
 
